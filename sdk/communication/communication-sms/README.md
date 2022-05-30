@@ -83,8 +83,13 @@ const client = new SmsClient(endpoint, credential);
 ## Send a 1:N SMS Message
 
 To send an SMS message, call the `send` function from the `SmsClient`. You need to pass in a `SmsSendRequest` object.
-You may also add pass in an options object to specify whether the delivery report should be enabled and set custom tags for the report.
+You may also pass in an options object to specify whether the delivery report should be enabled and set custom tags for the report.
+- The `enableDeliveryReport` parameter is an optional parameter that you can use to configure delivery reporting. This functionality is useful when you want to emit events when SMS messages are delivered. See the Handle SMS Events quickstart to configure delivery reporting for your SMS messages. 
+- The `validityPeriodSeconds`  parameter is an optional parameter that is useful when you want to determine maximum waiting time for the delivery report. Allowed waiting time range for the delivery report is 1-18000 seconds, default value is 18000 seconds.
+- The `tag` parameter is optional. You can use it to apply a tag to the delivery report.
+
 An array of `SmsSendResult` is returned. A `successful` flag is used to validate if each individual message was sent successfully.
+
 
 ```typescript
 const sendResults = await client.send(
@@ -94,7 +99,9 @@ const sendResults = await client.send(
     message: "Weekly Promotion!" // The message being sent
   },
   {
+    // Optional parameters
     enableDeliveryReport: true,
+    validityPeriodSeconds: 45,
     tag: "marketing"
   }
 );

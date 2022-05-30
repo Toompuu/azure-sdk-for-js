@@ -1,7 +1,0 @@
-{
-  "extends": "../../../../tsconfig.package",
-  "compilerOptions": {
-    "outDir": "./dist-esm"
-  },
-  "include": ["./test/**/*.ts"]
-}
