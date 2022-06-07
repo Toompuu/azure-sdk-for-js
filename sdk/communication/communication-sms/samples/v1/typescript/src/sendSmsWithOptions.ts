@@ -45,6 +45,7 @@ export async function main() {
   const sendOptions: SmsSendOptions = {
     //delivery reports are delivered via EventGrid
     enableDeliveryReport: true,
+    validityPeriodSeconds: 1333,
     //tags are applied to the delivery report
     tag: "marketing"
   };

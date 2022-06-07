@@ -51,6 +51,7 @@ export default function testCases(): void {
     };
     const options: SmsSendOptions = {
       enableDeliveryReport: true,
+      validityPeriodSeconds: 1333,
       tag: "SMS_LIVE_TEST",
     };
 

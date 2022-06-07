@@ -94,6 +94,13 @@ export const SmsSendOptions: coreClient.CompositeMapper = {
           name: "Boolean"
         }
       },
+      validityPeriodSeconds: {
+        serializedName: "validityPeriodSeconds",
+        required: false,
+        type: {
+          name: "Number"
+        }
+      },
       tag: {
         serializedName: "tag",
         type: {

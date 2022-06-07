@@ -36,7 +36,8 @@
         "message": "test message",
         "smsSendOptions": {
           "enableDeliveryReport": true,
-          "tag": "SMS_LIVE_TEST"
+          "tag": "SMS_LIVE_TEST",
+          "validityPeriodSeconds": 1333
         }
       },
       "StatusCode": 202,
@@ -99,7 +100,8 @@
         "message": "test message",
         "smsSendOptions": {
           "enableDeliveryReport": true,
-          "tag": "SMS_LIVE_TEST"
+          "tag": "SMS_LIVE_TEST",
+          "validityPeriodSeconds": 1333
         }
       },
       "StatusCode": 202,

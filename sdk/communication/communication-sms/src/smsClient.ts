@@ -20,7 +20,7 @@ import { generateSendMessageRequest } from "./utils/smsUtils";
 /**
  * Client options used to configure SMS Client API requests.
  */
-export interface SmsClientOptions extends CommonClientOptions {}
+export interface SmsClientOptions extends CommonClientOptions { }
 
 /**
  * Values used to configure Sms message
@@ -50,6 +50,11 @@ export interface SmsSendOptions extends OperationOptions {
    * EventGrid. Default value: false.
    */
   enableDeliveryReport?: boolean;
+  /**	
+   * Enable this flag to determine maximum time in seconds for waiting a delivery report	
+   * EventGrid. Default value: 18000.	
+   */
+  validityPeriodSeconds?: number;
   /**
    * Use this field to provide metadata that will then be sent back in the corresponding Delivery
    * Report.

@@ -34,6 +34,8 @@ export interface SmsRecipient {
 export interface SmsSendOptions {
   /** Enable this flag to receive a delivery report for this message on the Azure Resource EventGrid. */
   enableDeliveryReport: boolean;
+  /** Use this field to determine maximum waiting time in seconds for delivery report, default is 18000. */
+  validityPeriodSeconds?: number,
   /** Use this field to provide metadata that will then be sent back in the corresponding Delivery Report. */
   tag?: string;
 }
