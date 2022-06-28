@@ -13,6 +13,9 @@ export function generateSendMessageRequest(
   const _smsSendOptions: InternalOptions = {
     enableDeliveryReport: options.enableDeliveryReport ?? false,
   };
+  if (options.validityPeriodSeconds) {
+    _smsSendOptions["validityPeriodSeconds"] = options.validityPeriodSeconds;
+  }
   if (options.tag) {
     _smsSendOptions["tag"] = options.tag;
   }
@@ -29,6 +32,7 @@ export function generateSendMessageRequest(
     message: smsRequest.message,
     smsSendOptions: {
       enableDeliveryReport: options.enableDeliveryReport ?? false,
+      ...(options.validityPeriodSeconds && { validityPeriodSeconds: options.validityPeriodSeconds }),
       ...(options.tag && { tag: options.tag }),
     },
   };

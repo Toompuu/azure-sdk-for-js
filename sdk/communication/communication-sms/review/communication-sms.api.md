@@ -27,6 +27,7 @@ export interface SmsClientOptions extends CommonClientOptions {
 export interface SmsSendOptions extends OperationOptions {
     enableDeliveryReport?: boolean;
     tag?: string;
+    validityPeriodSeconds?: number;
 }
 
 // @public
